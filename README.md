@@ -244,27 +244,71 @@ Este repositorio contiene los ejercicios y aplicaciones evaluados en el curso, o
    ```
    - Captura: ![Async Await](./capturas/async_await.png)
 13. **Try catch finally**
-   - Código: [try_catch_finally.dart](./ejercicios/try_catch_finally.dart)
-   - Captura: ![Try Catch Finally](./capturas/try_catch_finally.png)
+   - Archivo: [try_catch.dart](./clase_miercoles/try_catch/bin/try_catch.dart)
+   - Código: 
+   ```dart
+   void main() {
+   try {
+      int resultado = 10 ~/ 0;
+      print("El resultado es $resultado");
+   } catch (e, s) {
+         print("Se produjo una excepción $e");
+         print("Su descripción es $s");
+      } finally {
+         print("Procura no dividir entre cero");
+      }
+   }
+   ```
+   - Captura: ![Try Catch Finally](./capturas/try_catch.png)
 14. **Streams**
-   - Código: [streams.dart](./ejercicios/streams.dart)
+   - Código: [streams.dart](./clase_miercoles/streams/bin/streams.dart)
+   - Código:
+   ```dart
+   void main() {
+      Stream<int> stream =
+            Stream<int>.periodic(Duration(seconds: 1), (count) => count)
+               .take(5); //Stream.periodic
+      stream.listen((data) => print('Data recibida: $data'));
+
+      Stream<int> otroStream = Stream.fromIterable([6, 7, 8, 9, 10]);
+      otroStream.listen((data) {
+         print("Data recibida: $data");
+      });
+   }
+   ```
    - Captura: ![Streams](./capturas/streams.png)
 15. **Stream await**
-   - Código: [stream_await.dart](./ejercicios/stream_await.dart)
+   - Código: [stream_await.dart](./clase_miercoles/streams/bin/azync_await_streams.dart)
+   - Código
+   ```dart
+   void main() async {
+      Stream<int> stream =
+            Stream.periodic(Duration(seconds: 1), (contador) => contador)
+               .take(5); //Stream periodic
+      await for (var data in stream) {
+         print("Data recibida: $data");
+      }
+   }
+   ```
    - Captura: ![Stream Await](./capturas/stream_await.png)
 
 ### Proyectos de Flutter
 
-- **Aplicación HelloWorld** - 0.5 puntos
+- **Aplicación HelloWorld**
   - Código: [hello_world_carlos_mata](./hello_world_carlos_mata/lib/main.dart)
   - Captura: ![HelloWorld App](./capturas/counter_screen.png)
 
-- **Aplicación YesOrNo** - 0.5 puntos
+- **Aplicación YesOrNo**
   - Código: [cemr_yes_no_app](./cemr_yes_no_app/lib/main.dart)
   - Capturas: 
   ![YesOrNo App](./capturas/yes_no_app.png)
   ![YesOrNo App](./capturas/yes_no_app_2.png)
 
+- **Proyectocon Arquitectura** 
+  - Código: [ddi_phone](./ddi_phone/lib/main.dart)
+  - Capturas: 
+  ![DDI PHONE](./capturas/ddi_phone.png)
+  
 ## Descargar el proyecto
 
 1. Clonar el repositorio:
