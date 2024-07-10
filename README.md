@@ -75,4 +75,4 @@ Este repositorio contiene los ejercicios y aplicaciones evaluados en el curso, o
 
 1. Clonar el repositorio:
    ```bash
-   git clone https://github.com/usuario/repositorio.git
+   git clone https://github.com/CarlosMR75/Actividades_Flutter_DDI.git
