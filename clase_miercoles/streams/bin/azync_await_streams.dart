@@ -1,4 +1,4 @@
-//Archivo azyng_await_streams.dart
+//Archivo azync_await_streams.dart
 void main() async {
   Stream<int> stream =
       Stream.periodic(Duration(seconds: 1), (contador) => contador)

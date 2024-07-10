@@ -1,6 +1,7 @@
 import 'package:dart_basics_01/coche.dart';
 
 void main() {
+  print("");
   var micoche = Coche("Chevrolet", "Chevy Pickup", 2024);
   micoche.mostrarDetalles();
 

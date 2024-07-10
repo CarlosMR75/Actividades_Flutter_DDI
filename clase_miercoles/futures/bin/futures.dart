@@ -1,4 +1,5 @@
 void main() {
+  print("");
   print("Inicio del programa");
 
   Future(() {
