@@ -37,7 +37,6 @@ Este repositorio contiene los ejercicios y aplicaciones evaluados en el curso, o
    nota = 8.5;
    esAdulto = true;
    ```
-   - Captura: ![Variables](./capturas/variables.png)
 3. **Maps**
    - Código: [maps.dart](./dart_basics_01/bin/dart_iterables.dart)
    - Código:
@@ -70,47 +69,47 @@ Este repositorio contiene los ejercicios y aplicaciones evaluados en el curso, o
    import 'dart:ffi';
 
    void main() {
-   // * Declarar lista
-   var numeros = [1, 3, 6, 8, 7];
-   // * Recorrer la lista para imprimir los valores
-   for (var i in numeros) {
-      print(i);
-   }
-   // * Recorrer la lista para imprimir los valoress
-   print("Recorriendo con ForEach");
-   numeros.forEach((i) => print(i));
+      // * Declarar lista
+      var numeros = [1, 3, 6, 8, 7];
+      // * Recorrer la lista para imprimir los valores
+      for (var i in numeros) {
+         print(i);
+      }
+      // * Recorrer la lista para imprimir los valoress
+      print("Recorriendo con ForEach");
+      numeros.forEach((i) => print(i));
 
-   // * Añadir valores a la lista
-   numeros.add(5);
-   print(numeros);
+      // * Añadir valores a la lista
+      numeros.add(5);
+      print(numeros);
 
-   // * Remover valores
-   numeros.remove(8);
-   print(numeros);
+      // * Remover valores
+      numeros.remove(8);
+      print(numeros);
 
-   // * Crear un mapa
-   Map<String, int> verduras = {
-      "Cilantro": 1,
-      "Zanahoria": 3,
-      "Apio": 5,
-      "Coliflor": 2
-   };
-   print(verduras);
+      // * Crear un mapa
+      Map<String, int> verduras = {
+         "Cilantro": 1,
+         "Zanahoria": 3,
+         "Apio": 5,
+         "Coliflor": 2
+      };
+      print(verduras);
 
-   verduras.remove("Zanahoria");
-   print(verduras);
+      verduras.remove("Zanahoria");
+      print(verduras);
 
-   verduras["Papas"] = 8;
-   print(verduras);
+      verduras["Papas"] = 8;
+      print(verduras);
 
-   print(verduras.isEmpty);
-   print(verduras.length);
-   print(verduras.keys);
-   print(verduras.values);
+      print(verduras.isEmpty);
+      print(verduras.length);
+      print(verduras.keys);
+      print(verduras.values);
 
-   for (var verdura in verduras.entries) {
-      print("${verdura.key}:${verdura.value}");
-   }
+      for (var verdura in verduras.entries) {
+         print("${verdura.key}:${verdura.value}");
+      }
    }
    ```
    - Captura: ![List, Maps and Iterables](./capturas/list_maps_iterables.png)
@@ -122,32 +121,32 @@ Este repositorio contiene los ejercicios y aplicaciones evaluados en el curso, o
    ```dart
    // * Crear una función que salude
    void saludar() {
-   print("Hola");
+      print("Hola");
    }
 
    void ejecutarOperacion(int x, int y, int Function(int, int) operacion) {
-   var resultado = operacion(x, y);
-   print("El resultado es: ${resultado}");
+      var resultado = operacion(x, y);
+      print("El resultado es: ${resultado}");
    }
 
    int sumar(int x, int y) {
-   return x + y;
+      return x + y;
    }
 
    int restar(int x, int y) {
-   return x - y;
+      return x - y;
    }
 
    int multiplicar(int x, int y) {
-   return x * y;
+      return x * y;
    }
 
    int dividir(int x, int y) {
-   return x ~/ y;
+      return x ~/ y;
    }
 
    Function crearMultiplicador(int factor) {
-   return (int numero) => numero * factor;
+      return (int numero) => numero * factor;
    }
    ```
    - Captura: ![Functions](./capturas/functions.png)
@@ -158,26 +157,72 @@ Este repositorio contiene los ejercicios y aplicaciones evaluados en el curso, o
    import 'package:dart_basics_01/coche.dart';
 
    void main() {
-   var micoche = Coche("Chevrolet", "Chevy Pickup", 2024);
-   micoche.mostrarDetalles();
+      var micoche = Coche("Chevrolet", "Chevy Pickup", 2024);
+      micoche.mostrarDetalles();
 
-   var otrocoche = Coche("Ford", "Falcon", 1968);
-   otrocoche.mostrarDetalles();
+      var otrocoche = Coche("Ford", "Falcon", 1968);
+      otrocoche.mostrarDetalles();
 
-   var cochenuevo = Coche("Toyota", "Corolla", 2020);
-   cochenuevo.mostrarDetalles();
+      var cochenuevo = Coche("Toyota", "Corolla", 2020);
+      cochenuevo.mostrarDetalles();
 
-   var unCocheMas = Coche.soloMarca("Nissan");
-   unCocheMas.mostrarDetalles();
+      var unCocheMas = Coche.soloMarca("Nissan");
+      unCocheMas.mostrarDetalles();
    }
    ```
    - Captura: ![Clases](./capturas/dart_clases.png)
 7. **Constructors and names**
-   - Código: [constructors_names.dart](./ejercicios/constructors_names.dart)
-   - Captura: ![Constructors and Names](./capturas/constructors_names.png)
+   - Archivo: [vehiculo.dart](./dart_basics_01/lib/vehiculo.dart)
+   - Código:
+   ```dart
+   // * Superclase
+   class Vehiculo {
+      String marca;
+      int anio;
+
+      //TODO: Constructor
+      Vehiculo(this.marca, this.anio);
+
+      // * Método
+      void mostrarDetalles() {
+         print("Marca: ${marca}, Año: ${anio}");
+      }
+   }
+   ```
 8. **Get and Set**
-   - Código: [get_set.dart](./ejercicios/get_set.dart)
-   - Captura: ![Get and Set](./capturas/get_set.png)
+   - Archivo: [get_and_Set.dart](./dart_basics_01/lib/vehiculogetandset.dart)
+   - Código
+   ```dart
+   // * Superclase
+   class Vehiculo {
+      String _marca;
+      int _anio;
+
+      //TODO: Constructor
+      Vehiculo(this._marca, this._anio);
+
+      // Getter for marca
+      String get marca => _marca;
+
+      // Setter for marca
+      set marca(String marca) {
+         _marca = marca;
+      }
+
+      // Getter for anio
+      int get anio => _anio;
+
+      // Setter for anio
+      set anio(int anio) {
+         _anio = anio;
+      }
+
+      // * Método
+      void mostrarDetalles() {
+         print("Marca: ${_marca}, Año: ${_anio}");
+      }
+   }
+   ```
 
 #### Ejercicios del 09 al 15:
 9. **Abstract class**
