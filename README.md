@@ -181,10 +181,43 @@ Este repositorio contiene los ejercicios y aplicaciones evaluados en el curso, o
 
 #### Ejercicios del 09 al 15:
 9. **Abstract class**
-   - Código: [abstract_class.dart](./clase_miercoles/abstract_class/bin/figura.dart)
+   - Archivo: [abstract_class.dart](./clase_miercoles/abstract_class/bin/figura.dart)
+   - Código:
+   ```dart
+   abstract class Figura {
+      double calcularArea();
+   }
+
+   class Circulo extends Figura {
+      double radio;
+      Circulo(this.radio);
+
+      @override
+      double calcularArea() {
+         return 3.14 * radio * radio;
+      }
+   }
+
+   class Rectangulo extends Figura {
+      double ancho, alto;
+      Rectangulo(this.ancho, this.alto);
+
+      @override
+      double calcularArea() {
+         return ancho * alto;
+      }
+   }
+
+   void main() {
+      var c = Circulo(15);
+      var r = Rectangulo(3, 5);
+      print('Área del círculo: ${c.calcularArea()}');
+      print('Área del rectángulo: ${r.calcularArea()}');
+   }
+   ```
    - Captura: 
    ![Abstract Class](./capturas/abstract_class.png)
-10. **Mixins** - 0.5 puntos.
+10. **Mixins**
    - Código: [mixins.dart](./clase_miercoles/mixins/bin/mixins.dart)
    - Código:
    ```dart
