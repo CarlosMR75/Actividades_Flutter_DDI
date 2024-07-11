@@ -337,7 +337,7 @@ Este repositorio contiene los ejercicios y aplicaciones evaluados en el curso, o
   ![YesOrNo App](./capturas/yes_no_app.png)
   ![YesOrNo App](./capturas/yes_no_app_2.png)
 
-- **Proyectocon Arquitectura** 
+- **Proyecto con Arquitectura** 
   - Código: [ddi_phone](./ddi_phone/lib/main.dart)
   - Capturas: 
   ![DDI PHONE](./capturas/ddi_phone.png)
